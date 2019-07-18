@@ -61,7 +61,7 @@ module Echosign::Request
   def self.create_user(token, base_uri, body)
     endpoint = ENDPOINT.fetch(:user, base_uri)
     headers = { 'Access-Token' => token }
-    response = post(endpoint, body, headers)
+    response = post(endpoint, body, headers, json: true)
     JSON.parse(response.body)
   end
 

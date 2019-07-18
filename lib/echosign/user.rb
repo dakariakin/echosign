@@ -6,7 +6,6 @@ module Echosign
     #
     # @param [Hash] params SYMBOL-referenced Hash containing:
     # @option params [String] :email User's email address (REQUIRED)
-    # @option params [String] :password The new user's password (REQUIRED)
     # @option params [String] :firstName The first name of the new user (REQUIRED)
     # @option params [String] :lastName The last name of the new user (REQUIRED)
     # @option params [String] :optIn 'YES' or 'NO' or 'UNKNOWN': Whether or not the user has opted in to recieve
@@ -28,7 +27,7 @@ module Echosign
     # @return [String] User ID
 
     def initialize(params)
-      require_keys([:firstName, :lastName, :email, :password], params)
+      require_keys([:firstName, :lastName, :email], params)
       merge!(params)
     end
   end # class User
